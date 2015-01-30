@@ -35,6 +35,12 @@ class Article
      */
     private $contenu;
 
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_creation", type="datetime")
+     */
+    private $dateCreation;
 
     /**
      * Get id
