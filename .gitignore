@@ -9,3 +9,9 @@
 /vendor/
 /bin/
 /composer.phar
+/nbproject/private/
+.buildpath
+.metadata/
+.project
+.settings/
+nbproject/
