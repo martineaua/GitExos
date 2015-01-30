@@ -31,7 +31,7 @@ class Article
     /**
      * @var string
      *
-     * @ORM\Column(name="contenu", type="text", nullable=trtue)
+     * @ORM\Column(name="contenu", type="text", nullable=true)
      */
     private $contenu;
 
