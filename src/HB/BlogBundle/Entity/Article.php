@@ -41,7 +41,25 @@ class Article
      * @ORM\Column(name="date_creation", type="datetime")
      */
     private $dateCreation;
-
+    
+    /**
+     * Affichage date automatique
+     * @
+     */
+    public function __construct() {
+        $this->dateCreation = new \DateTime();
+    }
+    
+     /**
+     * Get dateCreation
+     *
+     * @return \DateTime 
+     */
+     public function getDateCreation()
+    {
+        return $this->dateCreation;
+    }
+    
     /**
      * Get id
      *

@@ -1,0 +1,8 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+<h2>{%  if edition %}Edition d'un article{% else %}Création d'un article{% endif %} d'un article</h2>
+
+{{form (formulaire)}}
+
+{% endblock %}
