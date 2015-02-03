@@ -42,10 +42,18 @@ class Article
      */
     private $dateCreation;
     
-    /**
+     /**
+     * @var Utilisateur
+     *
+     * @ORM\ManyToOne(targetEntity="utilisateur", inversedBy="articles")
+     */
+    private $auteur;
+    
+     /**
      * Affichage date automatique
      * @
      */
+    
     public function __construct() {
         $this->dateCreation = new \DateTime();
     }
@@ -114,5 +122,41 @@ class Article
     public function getContenu()
     {
         return $this->contenu;
+    }
+
+    /**
+     * Set dateCreation
+     *
+     * @param \DateTime $dateCreation
+     * @return Article
+     */
+    public function setDateCreation($dateCreation)
+    {
+        $this->dateCreation = $dateCreation;
+
+        return $this;
+    }
+
+    /**
+     * Set auteur
+     *
+     * @param \HB\BlogBundle\Entity\utilisateur $auteur
+     * @return Article
+     */
+    public function setAuteur(\HB\BlogBundle\Entity\utilisateur $auteur = null)
+    {
+        $this->auteur = $auteur;
+
+        return $this;
+    }
+
+    /**
+     * Get auteur
+     *
+     * @return \HB\BlogBundle\Entity\utilisateur 
+     */
+    public function getAuteur()
+    {
+        return $this->auteur;
     }
 }
