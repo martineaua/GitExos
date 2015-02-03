@@ -51,7 +51,7 @@ class ArticleController extends Controller {
      * @Template()
      */
     public function readAction($id) {
-        //on r�cup�re le repository de l'article
+        //on récupère le repository de l'article
         $repository = $this->getDoctrine()->getRepository("HBBlogBundle:Article");
 
         //on demande au repository l'article par id
