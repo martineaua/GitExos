@@ -14,5 +14,16 @@
 
 <p>{{ utilisateur.nom }}</p>
 
-{#<p>{{ utilisateur.articles }}</p>#}
+
+{% for article in utilisateur.articles  %}
+    {% if loop.first %}
+        <ul>
+     {% endif %}       
+    <li><a href="{{ path('article_read',{'id':article.id})}}">{{article.titre}}</a></li><br/>
+     {% if loop.last %}
+        <ul>
+     {% endif %} 
+{% endfor %}
+
+
 {% endblock %}

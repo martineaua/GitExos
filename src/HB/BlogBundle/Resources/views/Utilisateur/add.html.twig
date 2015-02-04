@@ -3,6 +3,28 @@
 {% block body %}
 <h2>{%  if edition %}Edition d'un utilisateur{% else %}Création d'un utilisateur{% endif %}</h2>
 
-{{form (formulaire)}}
+{#{form (formulaire)}#}
+
+<form action="{{path('utilisateur_add')}}" method="post" {{form_enctype(formulaire)}}>
+{{form_errors(formulaire)}}
+
+<div>
+    {{ form_label(formulaire.nom, "Nom : ") }}
+    {{ form_widget(formulaire.nom) }}
+    {{ form_errors(formulaire.nom) }}
+</div>
+<div>
+    {{ form_label(formulaire.login, "Login : ") }}
+    {{ form_widget(formulaire.login) }}
+    {{ form_errors(formulaire.login) }}
+</div>
+<div>
+    {{ form_label(formulaire.password, "Password : ") }}
+    {{ form_widget(formulaire.password) }}
+    {{ form_errors(formulaire.password) }}
+</div>
+{{ form_rest(formulaire) }}
+</form>
+
 
 {% endblock %}

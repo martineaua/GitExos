@@ -34,7 +34,7 @@ class ArticleController extends Controller {
 
     /**
      * Ajoute un article avec formulaire
-     * @Route("/add")
+     * @Route("/add", name="article_add")
      * @Template()
      */
     public function addAction() {
