@@ -78,12 +78,10 @@ be_simple_soap:
         lifetime: 86400
         limit:    5
         
-    services:
-        clients:
-        BogApi:
+    clients:
+        BlogApi:
             # required
-            wsdl: http://cloudws.alain-martineau.local/ws/BogApi?WSDL
-
+            wsdl: http://cloudws.alain-martineau.local/ws/BlogApi?WSDL
             # classmap (optional)
             classmap:
                 type_name: "HB\BlogBundle\Entity\ArticleName"
