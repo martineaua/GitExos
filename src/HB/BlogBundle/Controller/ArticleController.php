@@ -22,15 +22,15 @@ class ArticleController extends Controller {
      * @Template()
      */
     public function indexAction() {
-        //on récupère le repository de l'article
-        $repository = $this->container->get('besimple.soap.clients.BlogApi');
+        //on récupère le web service
+        $repository = $this->container->get('besimple.soap.client.BlogApi');
        
-
         //on demande au ws repository tous les articles
-        $articles = $repository->getArticlesAction();
+        $articles = $repository->getArticles();
+        print_r($articles);
 
         //on retourne tous les articles dans un tableau associatif
-        return $this->render('BlogBundle:Resources:Article:index.html.twig', array ('getArticlesAction()' => $articles));
+        return array ('articles' => $articles);
     }
 
     /**
