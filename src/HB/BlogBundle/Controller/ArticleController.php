@@ -23,14 +23,14 @@ class ArticleController extends Controller {
      */
     public function indexAction() {
         //on récupère le web service
-        $repository = $this->container->get('besimple.soap.client.BlogApi');
+        $repository = $this->container->get('besimple.soap.clt.BlogApi');
        
         //on demande au ws repository tous les articles
         $articles = $repository->getArticles();
-        print_r($articles);
+        //print_r($articles);
 
         //on retourne tous les articles dans un tableau associatif
-        return array ('articles' => $articles);
+        return array ('articles' => $articles['item']);
     }
 
     /**
